@@ -1,0 +1,81 @@
+<!doctype html>
+<!-- 声明这是一个 HTML5 网页 -->
+
+<html lang="zh-CN">
+<!-- 整个网页的开始，网页语言为简体中文 -->
+
+<head>
+  <!-- head 中存放网页配置，一般不会显示在页面中 -->
+
+  <meta charset="UTF-8">
+  <!-- 使用 UTF-8 编码，防止中文乱码 -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 让网页适应电脑、手机和平板的屏幕宽度 -->
+
+  <title>Tags</title>
+  <!-- 浏览器标签页显示的标题 -->
+
+  <link rel="stylesheet" href="style.css">
+  <!-- 引入外部 CSS 文件，负责页面样式 -->
+</head>
+
+<body>
+    <!-- main表示网页的最主要区域 -->
+     <main>
+        <!-- 网页主标题 -->
+        <h1>我的 Tags</h1>
+        <!-- 网页介绍文字 -->
+        <p>收集想法，记录此刻</p>
+        <!-- 添加标签按钮 -->
+        <button id="show-form-button" type="button">
+            添加标签
+        </button>
+        <!-- 用于收集 Tag 的表单 -->
+        <form id="tag-form" class="tag-form hidden">
+            <!-- 标签记录的正文 -->
+             <label for="tag-content">想记录什么？</label>
+            <textarea 
+                id="tag-content"
+                name="content"
+                placeholder="写下你的想法..."
+            ></textarea>
+            <!-- 一个简短的标签 -->
+            <label for="tag-label">标签</label>
+            <input 
+              id="tag-label" 
+              name="tag"
+              type="text" 
+              placeholder="例如：前端学习">
+            <!-- 提交按钮 -->
+            <button type="submit">提交</button>
+        </form>
+        <!-- 标签列表区域 -->
+        <section class="tag-list">
+        <!-- 一条独立的标签记录 -->
+            <article class="tag-card">
+            <!-- 标签记录的正文 -->
+                <p>今天亲手做出了第一个前端页面。</p>
+                <!-- 一个简短的标签 -->
+                <span>#前端学习</span>
+            </article>
+            <article class="tag-card">
+            <!-- 标签记录的正文 -->
+                <p>苹果的玻璃设计真的很好看。</p>
+                <!-- 一个简短的标签 -->
+                <span>#UI设计</span>
+            </article>
+            <article class="tag-card">
+            <!-- 标签记录的正文 -->
+                <p>把突然冒出来的想法保存下来。</p>
+                <!-- 一个简短的标签 -->
+                <span>#灵感</span>
+            </article>
+        </section>
+     </main>
+     <!-- 引入 JavaScript 文件 -->
+     <script src="app.js"></script>
+</body>
+
+</html>
+<!-- 整个网页结束 -->
