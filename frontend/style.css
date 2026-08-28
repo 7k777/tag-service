@@ -11,92 +11,182 @@ body {
 
 /* 中间的玻璃卡片 */
 main {
+  /* 卡片宽度 */
   width: calc(100% - 40px);
   max-width: 520px;
   box-sizing: border-box;
 
+  /* 让卡片水平居中，并与顶部保持距离 */
   margin: 80px auto;
   padding: 48px 36px;
 
   text-align: center;
 
+  /* 带有轻微明暗变化的半透明玻璃 */
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.9),
     rgba(235, 235, 240, 0.5)
   );
 
+  /* 玻璃边缘 */
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 30px;
 
+  /* 外部阴影和内部高光 */
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 1);
 
+  /* 模糊玻璃后面的内容 */
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
 }
 /* 添加标签按钮 */
 button {
+  /* 去掉浏览器自带边框 */
   border: none;
+
+  /* 把按钮做成胶囊形状 */
   border-radius: 999px;
+
+  /* 设置按钮内部空间：上下 12px，左右 20px */
   padding: 12px 20px;
+
+  /* 苹果常见的蓝色 */
   background-color: #0071e3;
+
+  /* 按钮文字变成白色 */
   color: white;
+
+  /* 继承网页字体 */
   font: inherit;
   font-weight: 600;
+
+  /* 鼠标移上去显示小手 */
   cursor: pointer;
 }
+/* 鼠标经过按钮时 */
 button:hover {
   background-color: #0077ed;
 }
 
+/* 标签列表与上方按钮保持距离 */
 .tag-list {
   margin-top: 32px;
-  display: grid;
+
+  /* 使用网格排列里面的卡片 */
+    display: grid;
+
+  /* 每张卡片之间间隔 16px */
   gap: 16px;
 }
 
+/* 一张独立的 Tag 卡片 */
 .tag-card {
+  /* 卡片内部留出空间 */
   padding: 20px;
+
+  /* 卡片里的文字靠左 */
   text-align: left;
+
+  /* 半透明的浅色背景 */
   background: rgba(255, 255, 255, 0.65);
+
+  /* 淡淡的边缘 */
   border: 1px solid rgba(0, 0, 0, 0.08);
+
+  /* 圆角 */
   border-radius: 20px;
+
+  /* 轻微阴影 */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* Tag 卡片里的正文 */
 .tag-card p {
   margin-top: 0;
   margin-bottom: 14px;
   line-height: 1.6;
 }
 
+/* Tag 卡片里的小标签 */
 .tag-card span {
   display: inline-block;
+
   padding: 6px 10px;
+
   background-color: rgba(0, 113, 227, 0.12);
   color: #0066cc;
+
   border-radius: 999px;
+
   font-size: 14px;
   font-weight: 600;
 }
 
+/* 添加 Tag 的表单 */
 .tag-form {
+  /* 与上方的添加按钮保持距离 */
   margin-top: 24px;
+
+  /* 让表单元素按照网格排列 */
   display: grid;
+
+  /* 每个元素之间留出距离 */
   gap: 12px;
+
+  /* 表单里的文字靠左 */
   text-align: left;
 }
 
+/* 表单中的说明文字 */
 .tag-form label {
   margin-top: 8px;
+
   font-size: 14px;
   font-weight: 600;
 }
 
+/* 正文输入区和标签输入框 */
 .tag-form textarea,
 .tag-form input {
+  /* 占满表单宽度 */
+  width: 100%;
+
+  /* 防止 padding 把输入框撑出表单 */
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  font: inherit;
+}
+
+/* 正文输入区单独设置高度 */
+.tag-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* 表单中的提交按钮 */
+.tag-form button {
+  width: 100%;
+  margin-top: 4px;
+}
+/* 隐藏元素 */
+.hidden {
+  display: none;
+}
+
+/* ============ 登录/注册界面 ============ */
+
+/* 登录/注册界面的输入框 */
+.auth-view input {
   width: 100%;
   box-sizing: border-box;
   padding: 12px 14px;
@@ -104,17 +194,33 @@ button:hover {
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.7);
   font: inherit;
+  margin-bottom: 12px;
+  text-align: left;
 }
 
-.tag-form textarea {
-  min-height: 100px;
-  resize: vertical;
-}
-
-.tag-form button {
+/* 登录/注册的按钮 */
+.auth-view button {
   width: 100%;
-  margin-top: 4px;
 }
-.hidden {
-  display: none;
+
+/* 切换登录/注册的链接 */
+.switch-link {
+  text-align: center;
+  font-size: 14px;
+  color: #0071e3;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.switch-link:hover {
+  text-decoration: underline;
+}
+
+/* 退出登录按钮 */
+.logout-btn {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #1d1d1f;
+  margin-left: 8px;
+}
+.logout-btn:hover {
+  background-color: rgba(0, 0, 0, 0.15);
 }

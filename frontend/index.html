@@ -21,60 +21,53 @@
 </head>
 
 <body>
-    <!-- main表示网页的最主要区域 -->
-     <main>
+
+    <!-- ============ 登录视图（一进来就是它） ============ -->
+    <main id="login-view" class="auth-view">
+        <h1>我的 Tags</h1>
+        <p>登录后才能查看和添加标签</p>
+        <input id="login-email" type="email" placeholder="邮箱">
+        <input id="login-password" type="password" placeholder="密码">
+        <button id="login-btn" type="button">登录</button>
+        <p class="switch-link" id="to-register">没有账号？注册一个</p>
+    </main>
+
+    <!-- ============ 注册视图（点"注册一个"跳过来） ============ -->
+    <main id="register-view" class="auth-view hidden">
+        <h1>注册账号</h1>
+        <p>创建一个新账号，你的标签只有你能看到</p>
+        <input id="reg-email" type="email" placeholder="邮箱">
+        <input id="reg-password" type="password" placeholder="密码">
+        <button id="register-btn" type="button">注册</button>
+        <p class="switch-link" id="to-login">已有账号？去登录</p>
+    </main>
+
+    <!-- ============ tags 主视图（登录后显示） ============ -->
+    <main id="tags-view" class="hidden">
         <!-- 网页主标题 -->
         <h1>我的 Tags</h1>
-        <!-- 网页介绍文字 -->
-        <p>收集想法，记录此刻</p>
+        <!-- 当前登录邮箱 -->
+        <p id="current-user"></p>
         <!-- 添加标签按钮 -->
-        <button id="show-form-button" type="button">
-            添加标签
-        </button>
+        <button id="show-form-button" type="button">添加标签</button>
+        <!-- 退出登录按钮 -->
+        <button id="logout-btn" type="button" class="logout-btn">退出登录</button>
+
         <!-- 用于收集 Tag 的表单 -->
         <form id="tag-form" class="tag-form hidden">
-            <!-- 标签记录的正文 -->
-             <label for="tag-content">想记录什么？</label>
-            <textarea 
-                id="tag-content"
-                name="content"
-                placeholder="写下你的想法..."
-            ></textarea>
-            <!-- 一个简短的标签 -->
+            <label for="tag-content">想记录什么？</label>
+            <textarea id="tag-content" name="content" placeholder="写下你的想法..."></textarea>
             <label for="tag-label">标签</label>
-            <input 
-              id="tag-label" 
-              name="tag"
-              type="text" 
-              placeholder="例如：前端学习">
-            <!-- 提交按钮 -->
+            <input id="tag-label" name="tag" type="text" placeholder="例如：前端学习">
             <button type="submit">提交</button>
         </form>
+
         <!-- 标签列表区域 -->
-        <section class="tag-list">
-        <!-- 一条独立的标签记录 -->
-            <article class="tag-card">
-            <!-- 标签记录的正文 -->
-                <p>今天亲手做出了第一个前端页面。</p>
-                <!-- 一个简短的标签 -->
-                <span>#前端学习</span>
-            </article>
-            <article class="tag-card">
-            <!-- 标签记录的正文 -->
-                <p>苹果的玻璃设计真的很好看。</p>
-                <!-- 一个简短的标签 -->
-                <span>#UI设计</span>
-            </article>
-            <article class="tag-card">
-            <!-- 标签记录的正文 -->
-                <p>把突然冒出来的想法保存下来。</p>
-                <!-- 一个简短的标签 -->
-                <span>#灵感</span>
-            </article>
-        </section>
-     </main>
-     <!-- 引入 JavaScript 文件 -->
-     <script src="app.js"></script>
+        <section class="tag-list"></section>
+    </main>
+
+    <!-- 引入 JavaScript 文件 -->
+    <script src="app.js"></script>
 </body>
 
 </html>
