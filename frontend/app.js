@@ -1,5 +1,5 @@
 // 后端地址
-const API = "http://38.47.126.167:18111";
+const API = "/api";
 
 // token 和邮箱（存在浏览器 localStorage 里，刷新不丢）
 let token = localStorage.getItem("token") || "";
