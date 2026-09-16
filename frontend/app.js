@@ -129,7 +129,15 @@ function showTag(tag) {
   const label = document.createElement("span");
   label.textContent = `#${tag.tags[0]}`;
 
-  card.append(content, label);
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "删除";
+  deleteButton.classList.add("delete-button");
+
+  deleteButton.addEventListener("click",() => {
+    deleteTag(tag.id);
+  });
+
+  card.append(content, label,deleteButton);
   tagList.prepend(card);
 }
 
@@ -139,6 +147,24 @@ async function loadTags() {
   const data = await res.json();
   tagList.innerHTML = "";
   data.data.forEach(showTag);
+}
+async function deleteTag(tagId) {
+  const confirmed = confirm("确定要删除这条标签吗？");
+
+  if (!confirmed){
+    return;
+  }
+  const res = await fetch(`${API}/tags/${tagId}`,{
+    method:"DELETE",
+    headers:authHeaders()
+  });
+
+  if (!res.ok){
+  alert("删除失败，请稍后重试");
+  return;
+  }
+
+  loadTags();
 }
 
 // ============ 事件绑定 ============

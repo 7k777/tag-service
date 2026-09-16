@@ -224,3 +224,15 @@ button:hover {
 .logout-btn:hover {
   background-color: rgba(0, 0, 0, 0.15);
 }
+
+.delete-button {
+  float: right;
+  padding: 6px 12px;
+  margin-left: 10px;
+  background-color: rgba(255,59,48,0.12);
+  color: #d70015;
+  font-size: 14px;
+}
+.delete-button:hover {
+  background-color: rgba(255,59,48,0.22);
+}
