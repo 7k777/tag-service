@@ -248,4 +248,4 @@ npx wrangler deploy
 
 ## License
 
-[MIT](LICENSE)
+本仓库采用分区授权：除 `frontend/` 外的原创源码使用 **Mozilla Public License 2.0 (MPL-2.0)**；`frontend/`（包括 HTML、CSS、JavaScript、视觉设计与布局等）由 **7k777 保留全部权利**，公开仅供查看，未经许可不得修改、复制、再分发或制作衍生版本。详见 [LICENSE](LICENSE)、[MPL-2.0](LICENSES/MPL-2.0.txt) 与 [frontend/LICENSE](frontend/LICENSE)。
