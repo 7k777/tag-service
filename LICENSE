@@ -1,17 +1,11 @@
-MIT License
+# Licensing
 
-Copyright (c) 2026 7k777
+Copyright (c) 2026 7k777.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This repository uses split licensing:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+- Except for the `frontend/` directory, original source code in this repository is licensed under the Mozilla Public License 2.0 (MPL-2.0). See `LICENSES/MPL-2.0.txt`.
+- The entire `frontend/` directory, including its HTML, CSS, JavaScript, visual design, layout, and related assets, is Copyright (c) 2026 7k777. All rights reserved. It is publicly visible for inspection, but no permission is granted to modify, copy, redistribute, sublicense, or create derivative works from that directory without prior written permission from 7k777, except where applicable law permits otherwise. See `frontend/LICENSE`.
+- Third-party components, if any, remain subject to their respective licenses.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+For the MPL-licensed portion, copyright and license notices must be preserved as required by MPL-2.0.
